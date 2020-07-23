@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 
 
-app.use('/api',apiRoute);
+app.use('/api', apiRoute);
 
 const httpServer = http.createServer(app);
 
@@ -17,10 +17,9 @@ db();
 
 // websocket
 
-const wss = new websocket.Server({server:httpServer});
-wss.on('connection',(ws,request)=>{
+const wss = new websocket.Server({ server: httpServer });
+wss.on('connection', (ws, request) => {
     console.log('user connected');
-    
 });
 
-httpServer.listen(5000, () => {console.log('listenning on port 5000')});
+httpServer.listen(5000, () => { console.log('listenning on port 5000') });
